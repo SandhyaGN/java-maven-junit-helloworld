@@ -18,4 +18,9 @@ node{
     def mvnHome= tool name: 'maven-3', type: 'maven'
     shell "${mvnHome}/bin/mvn verify"
   }
+  stage('idk'){
+    echo 'dik'
+    def mvnHome= tool name: 'maven-3', type: 'maven'
+    shell "${mvnHome}/bin/mvn clean verify"
+  }
 }
