@@ -6,7 +6,7 @@ node{
   stage('Compile Package'){
     echo 'Compiling the Project'
     def mvnHome= tool name: 'maven-3', type: 'maven'
-    echo '${mvnHome}'
+    echo 'mvnHome'
 //     sh "${mvnHome}/bin/mvn package"
   }
   stage('Run Unit Tests'){
