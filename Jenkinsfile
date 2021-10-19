@@ -3,7 +3,7 @@ node{
     git 'https://github.com/SandhyaGN/java-maven-junit-helloworld.git'
   }
   stage('Compile Package'){
-    def mvnHome= tool name: 'maven', type: 'maven'
+    def mvnHome= tool name: 'maven-3', type: 'maven'
     sh "${mvnHome}/bin/mvn package"
   }
 }
