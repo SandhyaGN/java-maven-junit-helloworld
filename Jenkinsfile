@@ -8,4 +8,9 @@ node{
     def mvnHome= tool name: 'maven-3', type: 'maven'
     shell "${mvnHome}/bin/mvn package"
   }
+  stage('Run Unit Tests'){
+    echo 'Running Unit Tests'
+    def mvnHome= tool name: 'maven-3', type: 'maven'
+    shell "${mvnHome}/bin/mvn test"
+  }
 }
