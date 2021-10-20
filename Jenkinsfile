@@ -12,15 +12,15 @@ node{
 //   }
   stage('Run Unit Tests'){
     echo 'Running Unit Tests'
-    bat 'C:\\\\Program Files\\\\apache-maven-3.8.3\\\\bin\\\\mvn compile'
+    bat 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn compile'
 //     shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn test'
   }
-  stage('Coverage Report'){
-    echo 'Generate Coverage Report'
-    shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn verify'
-  }
-  stage('idk'){
-    echo 'dik'
-    shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn clean verify'
-  }
+//   stage('Coverage Report'){
+//     echo 'Generate Coverage Report'
+//     shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn verify'
+//   }
+//   stage('idk'){
+//     echo 'dik'
+//     shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn clean verify'
+//   }
 }
