@@ -7,21 +7,21 @@ node{
     echo 'Compiling the Project'
     def mvnHome= tool name: 'maven-3', type: 'maven'
     echo "${mvnHome}"
-    sh "${mvnHome}/bin/mvn package"
+    sh 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn package'
   }
   stage('Run Unit Tests'){
     echo 'Running Unit Tests'
     def mvnHome= tool name: 'maven-3', type: 'maven'
-    sh "${mvnHome}/bin/mvn test"
+    sh 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn test'
   }
   stage('Coverage Report'){
     echo 'Generate Coverage Report'
     def mvnHome= tool name: 'maven-3', type: 'maven'
-    sh "${mvnHome}/bin/mvn verify"
+    sh 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn verify'
   }
   stage('idk'){
     echo 'dik'
     def mvnHome= tool name: 'maven-3', type: 'maven'
-    sh "${mvnHome}/bin/mvn clean verify"
+    sh 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn clean verify'
   }
 }
