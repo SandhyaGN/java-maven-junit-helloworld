@@ -12,7 +12,7 @@ node{
 //   }
   stage('Run Unit Tests'){
     echo 'Running Unit Tests'
-    sh 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn test'
+    sh 'C:\Program Files\apache-maven-3.8.3\bin\mvn test'
   }
 //   stage('Coverage Report'){
 //     echo 'Generate Coverage Report'
