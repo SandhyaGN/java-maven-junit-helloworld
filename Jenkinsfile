@@ -12,7 +12,7 @@ node{
 //   }
   stage('Run Unit Tests'){
     echo 'Running Unit Tests'
-    bat 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn compile'
+    bat '%mvnHome%\\bin\\mvn compile'
 //     shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn test'
   }
 //   stage('Coverage Report'){
