@@ -13,8 +13,8 @@ node{
   stage('Run Unit Tests'){
     echo 'Running Unit Tests'
     shell 'xcodebuild -scheme UnitTestRunner -configuration debug || true'
-    junit 'https://github.com/SandhyaGN/java-maven-junit-helloworld/blob/master/pom.xml'
-    archiveArtifacts artifacts: 'https://github.com/SandhyaGN/java-maven-junit-helloworld/blob/master/pom.xml', followSymlinks: false  
+    junit 'http://localhost:8080/job/Blue%20Optima/64/execution/node/3/ws/pom.xml'
+    archiveArtifacts artifacts: 'http://localhost:8080/job/Blue%20Optima/64/execution/node/3/ws/pom.xml', followSymlinks: false  
   }
   stage('Coverage Report'){
     echo 'Generate Coverage Report'
