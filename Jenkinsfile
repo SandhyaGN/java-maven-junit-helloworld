@@ -7,21 +7,25 @@ node{
   stage('Compile Package'){
     echo 'Compiling the Project'
     echo "${mvnHome}"
-//     shell "${mvnHome}/bin/mvn clean"
     sh "${mvnHome}/bin/mvn compile"
   }
   stage('Run Unit Tests'){
     echo 'Running Unit Tests'
-    shell 'xcodebuild -scheme UnitTestRunner -configuration debug || true'
-    junit allowEmptyResults: true, testResults: 'http://localhost:8080/job/Blue%20Optima/64/execution/node/3/ws/pom.xml'
-//     archiveArtifacts artifacts: 'http://localhost:8080/job/Blue%20Optima/64/execution/node/3/ws/pom.xml', followSymlinks: false  
+    shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn test'
   }
   stage('Coverage Report'){
     echo 'Generate Coverage Report'
     shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn verify'
   }
-  stage('idk'){
-    echo 'dik'
+  stage('Publish Unit Tests'){
+    echo 'Publishing Unit Tests'
+    shell 'xcodebuild -scheme UnitTestRunner -configuration debug || true'
+    junit allowEmptyResults: true, testResults: 'http://localhost:8080/job/Blue%20Optima/64/execution/node/3/ws/pom.xml'
+    jacoco runAlways: true
+  }
+  stage('Publish Coverage Report'){
+    echo 'Publishing Coverage Report'
     shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn clean verify'
+    jacoco runAlways: true
   }
 }
