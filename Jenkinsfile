@@ -13,6 +13,7 @@ node{
   stage('Run Unit Tests'){
     echo 'Running Unit Tests'
     shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn test'
+    junit 'https://github.com/SandhyaGN/java-maven-junit-helloworld/blob/master/pom.xml'
   }
   stage('Coverage Report'){
     echo 'Generate Coverage Report'
