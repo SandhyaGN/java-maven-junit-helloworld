@@ -12,8 +12,9 @@ node{
   }
   stage('Run Unit Tests'){
     echo 'Running Unit Tests'
-    shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn test'
+    shell 'xcodebuild -scheme UnitTestRunner -configuration debug || true'
     junit 'https://github.com/SandhyaGN/java-maven-junit-helloworld/blob/master/pom.xml'
+    archiveArtifacts artifacts: 'https://github.com/SandhyaGN/java-maven-junit-helloworld/blob/master/pom.xml', followSymlinks: false  
   }
   stage('Coverage Report'){
     echo 'Generate Coverage Report'
