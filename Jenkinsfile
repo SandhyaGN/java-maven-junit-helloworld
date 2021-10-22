@@ -11,11 +11,11 @@ node{
   }
   stage('Run Unit Tests'){
     echo 'Running Unit Tests'
-    shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn test'
+    shell "${mvnHome}/bin/mvn test"
   }
   stage('Coverage Report'){
     echo 'Generate Coverage Report'
-    shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn verify'
+    shell "${mvnHome}/bin/mvn verify"
   }
   stage('Publish Unit Tests'){
     echo 'Publishing Unit Tests'
@@ -24,7 +24,7 @@ node{
   }
   stage('Publish Coverage Report'){
     echo 'Publishing Coverage Report'
-    shell 'C:\\Program Files\\apache-maven-3.8.3\\bin\\mvn clean verify'
+    shell "${mvnHome}/bin/mvn clean verify"
     jacoco runAlways: true
   }
 }
