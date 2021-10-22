@@ -21,7 +21,6 @@ node{
     echo 'Publishing Unit Tests'
     shell 'xcodebuild -scheme UnitTestRunner -configuration debug || true'
     junit allowEmptyResults: true, testResults: 'http://localhost:8080/job/Blue%20Optima/64/execution/node/3/ws/pom.xml'
-    jacoco runAlways: true
   }
   stage('Publish Coverage Report'){
     echo 'Publishing Coverage Report'
