@@ -7,7 +7,7 @@ node{
   stage('Compile Package'){
     echo 'Compiling the Project'
     echo "${mvnHome}"
-    shell "${mvnHome}/bin/mvn clean"
+//     shell "${mvnHome}/bin/mvn clean"
     sh "${mvnHome}/bin/mvn compile"
   }
   stage('Run Unit Tests'){
