@@ -14,7 +14,7 @@ node{
     echo 'Running Unit Tests'
     shell 'xcodebuild -scheme UnitTestRunner -configuration debug || true'
     junit allowEmptyResults: true, testResults: 'http://localhost:8080/job/Blue%20Optima/64/execution/node/3/ws/pom.xml'
-    archiveArtifacts artifacts: 'http://localhost:8080/job/Blue%20Optima/64/execution/node/3/ws/pom.xml', followSymlinks: false  
+//     archiveArtifacts artifacts: 'http://localhost:8080/job/Blue%20Optima/64/execution/node/3/ws/pom.xml', followSymlinks: false  
   }
   stage('Coverage Report'){
     echo 'Generate Coverage Report'
