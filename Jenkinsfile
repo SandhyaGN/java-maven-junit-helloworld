@@ -9,22 +9,22 @@ node{
   
   stage('Compile Package'){
     echo 'Compiling the Project'
-    sh "${mvnHome}/bin/mvn compile"
+    shell "${mvnHome}/bin/mvn compile"
   }
   
   stage('Run Unit Tests'){
     echo 'Running Unit Tests'
-    sh "${mvnHome}/bin/mvn test"
+    shell "${mvnHome}/bin/mvn test"
   }
   
   stage('Coverage Report'){
     echo 'Generate Coverage Report'
-    sh "${mvnHome}/bin/mvn verify"
+    shell "${mvnHome}/bin/mvn verify"
   }
   
   stage('Publish Unit Tests'){
     echo 'Publishing Unit Tests'
-    sh 'xcodebuild -scheme UnitTestRunner -configuration debug || true'
+    shell 'xcodebuild -scheme UnitTestRunner -configuration debug || true'
     junit allowEmptyResults: true, testResults: 'http://localhost:8080/job/Blue%20Optima/64/execution/node/3/ws/pom.xml'
   }
   
